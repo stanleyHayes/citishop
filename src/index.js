@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createMuiTheme, ThemeProvider} from "@material-ui/core";
 import {BrowserRouter} from "react-router-dom";
+import {Provider} from "react-redux";
+import store from "./app/store";
 
 
 const theme = createMuiTheme({
@@ -16,9 +18,11 @@ const theme = createMuiTheme({
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <ThemeProvider theme={theme}>
-                <App/>
-            </ThemeProvider>
+            <Provider store={store}>
+                <ThemeProvider theme={theme}>
+                    <App/>
+                </ThemeProvider>
+            </Provider>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

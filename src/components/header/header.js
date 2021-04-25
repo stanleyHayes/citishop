@@ -1,5 +1,5 @@
 import React from "react";
-import {AppBar, Grid, Hidden, makeStyles, Toolbar} from "@material-ui/core";
+import {AppBar, Hidden, makeStyles} from "@material-ui/core";
 import DesktopHeader from "./desktop-header";
 import MobileHeader from "./mobile-header";
 import TabletHeader from "./tablet-header";
@@ -8,9 +8,7 @@ const Header = () => {
 
     const useStyles = makeStyles(theme => {
         return {
-            root: {
-
-            }
+            root: {}
         }
     });
 
@@ -19,13 +17,13 @@ const Header = () => {
     return (
         <AppBar className={classes.root} variant="outlined" elevation={0}>
             <Hidden mdDown={true}>
-                <DesktopHeader />
+                <DesktopHeader/>
             </Hidden>
             <Hidden mdUp={true}>
-                <MobileHeader />
+                <MobileHeader/>
             </Hidden>
             <Hidden only={['xs', 'sm', 'lg', "xl"]}>
-                <TabletHeader />
+                <TabletHeader/>
             </Hidden>
         </AppBar>
     )
